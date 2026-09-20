@@ -4,10 +4,14 @@
     "kind": "desktop-update",
     "platform": "windows-x64",
     "approved": false,
-    "backendReady": false,
+    "backendReady": true,
     "version": "1.0.0-rc.32-assistente.3",
     "sequence": 3203,
-    "acceptedInstalledVersions": ["1.0.0-rc.31-candidato.2", "1.0.0-rc.32-assistente.1", "1.0.0-rc.32-assistente.2"],
+    "acceptedInstalledVersions": [
+      "1.0.0-rc.31-candidato.2",
+      "1.0.0-rc.32-assistente.1",
+      "1.0.0-rc.32-assistente.2"
+    ],
     "notes": "Conversão de Funcionário e Assistente desativados preservando a conta e o histórico; CPF com máscara, validação e consulta no sistema; visualização das senhas temporárias.",
     "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.32-assistente.3/SistemaPescador-Atualizacao-1.0.0-rc.32-assistente.3.exe"
   }
