@@ -8,7 +8,7 @@ Um único instalador Windows x64 para os computadores com **rc.31-candidato.2**,
 
 [Notas da versão e verificação do arquivo](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.32-assistente.3)
 
-**Pré-release: backend atualizado e inicialização confirmada pelo responsável em 20/09/2026. Aguarda a conferência no computador secundário.** A oferta pelo botão de atualização do programa permanece desabilitada até essa liberação.
+**Pré-release homologada no computador secundário pelo responsável em 20/09/2026, com backend atualizado.** Atualização liberada pelo botão **Verificar atualizações** para as versões compatíveis.
 
 Inclui Assistentes com cidades autorizadas, conversão de contas desativadas preservando o histórico, CPF com máscara e verificação no sistema, botões para mostrar senhas temporárias e consulta de atualizações pelo programa.
 
