@@ -1,29 +1,17 @@
-# Sistema Pescador
+# Sistema Pescador — Downloads
 
-Repositório oficial para download das versões de teste do **Sistema Pescador**.
+## Atualização do desktop: 1.0.0-rc.32-assistente.3
 
-## Versão atual
+Um único instalador Windows x64 para os computadores com **rc.31-candidato.2**, **rc.32-assistente.1** ou **rc.32-assistente.2**.
 
-### Sistema Pescador 1.0.0-rc.30
+[Baixar instalador de atualização](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.32-assistente.3/SistemaPescador-Atualizacao-1.0.0-rc.32-assistente.3.exe)
 
-**Status:** pré-release operacionalmente estabilizada para Windows.
+[Notas da versão e verificação do arquivo](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.32-assistente.3)
 
-[⬇️ Baixar instalador do Sistema Pescador 1.0.0-rc.30](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.30/SistemaPescador-Setup-1.0.0-rc.30.exe)
+**Pré-release: aguarda a atualização centralizada do backend de conversão de perfis e a conferência no computador secundário.** A oferta pelo botão de atualização do programa permanece desabilitada até essa liberação.
 
-[📦 Ver release e notas da versão](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.30)
+Inclui Assistentes com cidades autorizadas, conversão de contas desativadas preservando o histórico, CPF com máscara e verificação no sistema, botões para mostrar senhas temporárias e consulta de atualizações pelo programa.
 
-### Integridade do instalador
+Feche o Sistema Pescador antes de executar o instalador. O pacote atualiza o aplicativo e preserva os dados, documentos e componentes auxiliares existentes. Não exige PowerShell nos computadores. A instalação inicial em computador novo não está incluída neste pacote.
 
-Arquivo:
-
-`SistemaPescador-Setup-1.0.0-rc.30.exe`
-
-SHA-256:
-
-`946D4421B425B9CF4D33CA61FB8B3004BD8C663444CD5B7D1C5F8201197EDE6D`
-
-Também está disponível o arquivo `SHA256SUMS.txt` junto à release para conferência da integridade do download.
-
-## Observação
-
-Esta é uma versão candidata de teste. As novas versões são publicadas em **Releases** após validação operacional.
+As versões anteriores continuam no [histórico de releases](https://github.com/j4xmine/sistema-pescador-download/releases).
