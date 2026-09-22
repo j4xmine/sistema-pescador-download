@@ -18,7 +18,7 @@ jobs:
       INSTALLER: SistemaPescador-GuiaBridge-Atualizacao-0.5.40.exe
       INSTALLER_SHA256: f2dda783d5eaadeda1a4002dd748c7149b4227c8c926895da8585512a2024977
       ARTIFACT_SHA256: b7311d766e0a1f3d5e6ebe141190eccd1fc51a05c5b0b60cf1d7819a2d000d8b
-      SOURCE_URL: "https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-fea4-820e-a2f6-ca0ae880b519/raw?se=2026-09-22T21%3A41%3A41Z&sp=r&sv=2026-02-06&sr=b&scid=4a897d54-dada-5002-9c53-90808e2fc276&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-22T19%3A04%3A41Z&ske=2026-09-23T19%3A04%3A41Z&sks=b&skv=2026-02-06&sig=096Hqw6JxD2d0dc%2BrrLJ7Aayc0uRxCa1iZbQX23yJSE%3D"
+      SOURCE_URL: "https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-90a0-820e-8a4c-eee5cf3d69be/raw?se=2026-09-22T21%3A50%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=832857c0-2273-5a06-bfa6-0b04fc8627c7&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-22T21%3A11%3A08Z&ske=2026-09-23T21%3A11%3A08Z&sks=b&skv=2026-02-06&sig=cBkdvGb3WO29CGCAQAxA5Ke72YCE3GV3KV4xSSo0ArI%3D"
 
     steps:
       - uses: actions/checkout@v4
