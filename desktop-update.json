@@ -5,14 +5,16 @@
     "platform": "windows-x64",
     "approved": true,
     "backendReady": true,
-    "version": "1.0.0-rc.32-assistente.3",
-    "sequence": 3203,
+    "version": "1.0.0-rc.34-pescadores.1",
+    "sequence": 3401,
     "acceptedInstalledVersions": [
       "1.0.0-rc.31-candidato.2",
       "1.0.0-rc.32-assistente.1",
-      "1.0.0-rc.32-assistente.2"
+      "1.0.0-rc.32-assistente.2",
+      "1.0.0-rc.32-assistente.3",
+      "1.0.0-rc.33-layout.1"
     ],
-    "notes": "Conversão de Funcionário e Assistente desativados preservando a conta e o histórico; CPF com máscara, validação e consulta no sistema; visualização das senhas temporárias.",
-    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.32-assistente.3/SistemaPescador-Atualizacao-1.0.0-rc.32-assistente.3.exe"
+    "notes": "Filtros por carteira e mês de GPS pendente, ordenação por quantidade de guias pendentes e observação compartilhada no perfil. Inclui a tela compacta de Produção e GPS.",
+    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.34-pescadores.1/SistemaPescador-Atualizacao-1.0.0-rc.34-pescadores.1.exe"
   }
 }
