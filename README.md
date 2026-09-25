@@ -1,17 +1,19 @@
 # Sistema Pescador — Downloads
 
-## Atualização do desktop: 1.0.0-rc.32-assistente.3
+## Atualização do desktop: 1.0.0-rc.34-pescadores.1
 
-Um único instalador Windows x64 para os computadores com **rc.31-candidato.2**, **rc.32-assistente.1** ou **rc.32-assistente.2**.
+**Versão validada pelo responsável em 24/09/2026, com o servidor atualizado.** Disponível pelo ícone **Verificar atualizações** do programa.
 
-[Baixar instalador de atualização](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.32-assistente.3/SistemaPescador-Atualizacao-1.0.0-rc.32-assistente.3.exe)
+[Baixar instalador de atualização](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.34-pescadores.1/SistemaPescador-Atualizacao-1.0.0-rc.34-pescadores.1.exe)
 
-[Notas da versão e verificação do arquivo](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.32-assistente.3)
+[Notas da versão e verificação do arquivo](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.34-pescadores.1)
 
-**Pré-release homologada no computador secundário pelo responsável em 20/09/2026, com backend atualizado.** Atualização liberada pelo botão **Verificar atualizações** para as versões compatíveis.
+Inclui filtros por pescador com carteira ou novato, filtro por mês de GPS pendente, ordenação pela quantidade de guias pendentes e observação compartilhada no perfil. Inclui também a tela compacta de Produção e GPS.
 
-Inclui Assistentes com cidades autorizadas, conversão de contas desativadas preservando o histórico, CPF com máscara e verificação no sistema, botões para mostrar senhas temporárias e consulta de atualizações pelo programa.
+As observações precisam de internet para consulta e gravação.
 
-Feche o Sistema Pescador antes de executar o instalador. O pacote atualiza o aplicativo e preserva os dados, documentos e componentes auxiliares existentes. Não exige PowerShell nos computadores. A instalação inicial em computador novo não está incluída neste pacote.
+Um único instalador Windows x64 para computadores com **rc.31-candidato.2**, **rc.32-assistente.1**, **rc.32-assistente.2**, **rc.32-assistente.3** ou **rc.33-layout.1**. Também permite reinstalar esta mesma rc.34.
+
+Feche o Sistema Pescador antes de executar o instalador. O pacote preserva os dados, documentos e componentes auxiliares existentes. Não exige comandos no terminal dos computadores. A instalação inicial em computador novo não está incluída neste pacote.
 
 As versões anteriores continuam no [histórico de releases](https://github.com/j4xmine/sistema-pescador-download/releases).
