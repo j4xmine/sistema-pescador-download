@@ -5,8 +5,8 @@
     "backendReady": true,
     "kind": "desktop-update",
     "platform": "windows-x64",
-    "version": "1.0.0-rc.38",
-    "sequence": 3800,
+    "version": "1.0.0-rc.39-perfis-usuario.1",
+    "sequence": 3901,
     "acceptedInstalledVersions": [
       "1.0.0-rc.31-candidato.2",
       "1.0.0-rc.32-assistente.1",
@@ -16,9 +16,10 @@
       "1.0.0-rc.34-pescadores.1",
       "1.0.0-rc.35-login-manual.1",
       "1.0.0-rc.36-perfis.1",
-      "1.0.0-rc.37-reemissao.1"
+      "1.0.0-rc.37-reemissao.1",
+      "1.0.0-rc.38"
     ],
-    "notes": "Atualização unificada: aplicativo e GuiaBridge 0.5.43 no mesmo instalador. Inclui reemissão de várias guias, painel do pescador e perfis de preenchimento, validados pelo responsável. Feche o sistema antes de instalar.",
-    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.38/SistemaPescador-Atualizacao-1.0.0-rc.38.exe"
+    "notes": "Perfis do preenchimento rápido vinculados à conta do usuário e à entidade, com acesso em outros computadores. Inclui importação dos perfis locais e GuiaBridge 0.5.43. Backend atualizado e funcionamento confirmado pelo responsável. Feche o sistema antes de instalar.",
+    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.39-perfis-usuario.1/SistemaPescador-Atualizacao-1.0.0-rc.39-perfis-usuario.1.exe"
   }
 }
