@@ -5,8 +5,8 @@
     "backendReady": true,
     "kind": "desktop-update",
     "platform": "windows-x64",
-    "version": "1.0.0-rc.39-perfis-usuario.1",
-    "sequence": 3901,
+    "version": "1.0.0-rc.47-visual.1",
+    "sequence": 4701,
     "acceptedInstalledVersions": [
       "1.0.0-rc.31-candidato.2",
       "1.0.0-rc.32-assistente.1",
@@ -17,9 +17,17 @@
       "1.0.0-rc.35-login-manual.1",
       "1.0.0-rc.36-perfis.1",
       "1.0.0-rc.37-reemissao.1",
-      "1.0.0-rc.38"
+      "1.0.0-rc.38",
+      "1.0.0-rc.39-perfis-usuario.1",
+      "1.0.0-rc.40-estabilidade.1",
+      "1.0.0-rc.41-emissao.1",
+      "1.0.0-rc.42-guias-existentes.1",
+      "1.0.0-rc.43-substituicao.1",
+      "1.0.0-rc.44-perfis-lote.1",
+      "1.0.0-rc.45-gps-lote.1",
+      "1.0.0-rc.46-gps-conclusao.1"
     ],
-    "notes": "Perfis do preenchimento rápido vinculados à conta do usuário e à entidade, com acesso em outros computadores. Inclui importação dos perfis locais e GuiaBridge 0.5.43. Backend atualizado e funcionamento confirmado pelo responsável. Feche o sistema antes de instalar.",
-    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.39-perfis-usuario.1/SistemaPescador-Atualizacao-1.0.0-rc.39-perfis-usuario.1.exe"
+    "notes": "Versão validada pelo responsável em 29/09/2026. Visual atualizado, navegação compacta e Central GPS mais organizada. Inclui GuiaBridge 0.5.53 e mantém a atualização de várias GPS e os perfis por usuário. Instalador único, com preservação dos dados e documentos. Não exige nova atualização do backend. Feche o sistema antes de instalar.",
+    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.47-visual.1/SistemaPescador-Atualizacao-1.0.0-rc.47-visual.1.exe"
   }
 }
