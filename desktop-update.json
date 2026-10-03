@@ -5,8 +5,8 @@
     "backendReady": true,
     "kind": "desktop-update",
     "platform": "windows-x64",
-    "version": "1.0.0-rc.52-duas-etapas.1",
-    "sequence": 5201,
+    "version": "1.0.0-rc.56-acessos.1",
+    "sequence": 5601,
     "acceptedInstalledVersions": [
       "1.0.0-rc.31-candidato.2",
       "1.0.0-rc.32-assistente.1",
@@ -30,9 +30,13 @@
       "1.0.0-rc.48-login.1",
       "1.0.0-rc.49-abas.1",
       "1.0.0-rc.50-cadastro.1",
-      "1.0.0-rc.51-financeiro.1"
+      "1.0.0-rc.51-financeiro.1",
+      "1.0.0-rc.52-duas-etapas.1",
+      "1.0.0-rc.53-boas-vindas.1",
+      "1.0.0-rc.54-painel.1",
+      "1.0.0-rc.55-plataforma.1"
     ],
-    "notes": "RC52 validada em 02/10/2026: duas etapas com autenticador e recuperação, melhorias no Financeiro ao alternar abas e acesso ao perfil pelo nome. Inclui GuiaBridge 0.5.53 e preserva dados. O servidor já está atualizado. Instalar não ativa MFA; a liberação por conta continua controlada. Feche o sistema antes de executar o instalador.",
-    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.52-duas-etapas.1/SistemaPescador-Atualizacao-1.0.0-rc.52-duas-etapas.1.exe"
+    "notes": "RC56 validada em 02/10/2026: alternância entre entidade e plataforma na mesma conta autorizada, foto de perfil, painel e boas-vindas renovados, filtros de pagamentos e melhorias na administração. Inclui GuiaBridge 0.5.53 e preserva dados. Backend RC56 já instalado no servidor em uso. Acesso adicional depende de concessão pelo superusuário. Feche o sistema antes de executar o instalador.",
+    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.56-acessos.1/SistemaPescador-Atualizacao-1.0.0-rc.56-acessos.1.exe"
   }
 }
