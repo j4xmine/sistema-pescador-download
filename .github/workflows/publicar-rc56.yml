@@ -1,0 +1,53 @@
+name: Publicar RC56 validada
+on:
+  push:
+    branches: [release/rc56-publicar]
+    paths: [.github/workflows/publicar-rc56.yml]
+permissions:
+  contents: write
+concurrency:
+  group: publicar-rc56
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TAG: v1.0.0-rc.56-acessos.1
+      INSTALLER: SistemaPescador-Atualizacao-1.0.0-rc.56-acessos.1.exe
+      INSTALLER_SHA256: 3f3f98de177e7f7f60c57638e14657e08619d8a4d91294012117a12dde7676cd
+    steps:
+      - uses: actions/checkout@v4
+      - name: Transferir e conferir pacote exato
+        shell: bash
+        env:
+          SOURCE_URL: "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/1e721462-02f3-4667-8be3-c897090c810c?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-03T02%3A31%3A40Z&rscd=attachment%3B+filename%3DSistemaPescador-Atualizacao-1.0.0-rc.56-acessos.1.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-03T01%3A31%3A35Z&ske=2026-10-03T02%3A31%3A40Z&sks=b&skv=2018-11-09&sig=GB94qmQbBXCbK%2BpkHHCTZMwfOVgLef%2Bt%2B2CmO2a23qA%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MDk5NDAyOCwibmJmIjoxNzkwOTkyMjI4LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.N3H_hVfJ2WEr2n51DQ5ARXEHc6MHDgOUVpO3-gTlgHg&response-content-disposition=attachment%3B%20filename%3DSistemaPescador-Atualizacao-1.0.0-rc.56-acessos.1.exe&response-content-type=application%2Foctet-stream"
+        run: |
+          set -Eeuo pipefail
+          echo "::add-mask::$SOURCE_URL"
+          mkdir dist
+          curl --silent --show-error --fail --location --retry 2 "$SOURCE_URL" -o "dist/$INSTALLER"
+          echo "$INSTALLER_SHA256  dist/$INSTALLER" | sha256sum -c -
+          cp release-rc56/unified-manifest.json release-rc56/guia-bridge-manifest.json release-rc56/RELEASE-RC56.md dist/
+          printf '%s\n' '5fa73c2eb4183a01e20c754e6811686fc731e45b6db74a28c9ba4c17af619dfd  dist/unified-manifest.json' '34c045e23acc4173609261639649b4448dc3f9235d12776704346efe8685cc4b  dist/guia-bridge-manifest.json' | sha256sum -c -
+          jq -e '.frontendCommit == "0f867bb3e7d8589c05f0b9a5c567a6509f9a7de4" and .version == "1.0.0-rc.56-acessos.1" and .bridgeVersion == "0.5.53"' dist/unified-manifest.json >/dev/null
+          (cd dist && sha256sum "$INSTALLER" unified-manifest.json guia-bridge-manifest.json RELEASE-RC56.md > SHA256SUMS.txt && sha256sum -c SHA256SUMS.txt)
+      - name: Publicar versao validada
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Release existente; nao sera sobrescrita.'
+            exit 1
+          fi
+          gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --title 'Sistema Pescador RC56 — acessos e foto de perfil — validado' --notes-file dist/RELEASE-RC56.md
+          gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=false --latest=true
+      - name: Conferir download publico sem autenticacao
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          curl --silent --show-error --fail --location --retry 3 --retry-all-errors "https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$INSTALLER" -o publico.exe
+          echo "$INSTALLER_SHA256  publico.exe" | sha256sum -c -
+          echo PUBLIC_DOWNLOAD_VERIFIED=True
