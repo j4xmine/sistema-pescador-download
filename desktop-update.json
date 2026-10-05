@@ -5,8 +5,8 @@
     "backendReady": true,
     "kind": "desktop-update",
     "platform": "windows-x64",
-    "version": "1.0.0-rc.57-cadastro-gps.2",
-    "sequence": 5702,
+    "version": "1.0.0-rc.57-cadastro-gps.3",
+    "sequence": 5703,
     "acceptedInstalledVersions": [
       "1.0.0-rc.31-candidato.2",
       "1.0.0-rc.32-assistente.1",
@@ -35,9 +35,10 @@
       "1.0.0-rc.53-boas-vindas.1",
       "1.0.0-rc.54-painel.1",
       "1.0.0-rc.55-plataforma.1",
-      "1.0.0-rc.56-acessos.1"
+      "1.0.0-rc.56-acessos.1",
+      "1.0.0-rc.57-cadastro-gps.2"
     ],
-    "notes": "RC57 validada em 03/10/2026: cadastre outro pescador enquanto as guias são geradas e use Voltar à emissão para acompanhar. Preserva o rascunho do cadastro e protege o pescador em processamento. Inclui GuiaBridge 0.5.53. Não exige nova atualização do backend RC56 já instalado. Aguarde a emissão terminar, feche o sistema e execute o instalador sem desinstalar.",
-    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.57-cadastro-gps.2/SistemaPescador-Atualizacao-1.0.0-rc.57-cadastro-gps.2.exe"
+    "notes": "GuiaBridge 0.5.58 validado em uso real: preserva a sessão e o cache durante o lote, mantém as conferências e remove consulta redundante na retomada. Mesmas funções da RC57. Sem atualização de backend. Aguarde as emissões terminarem e feche o sistema antes de instalar.",
+    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.57-cadastro-gps.3/SistemaPescador-Atualizacao-1.0.0-rc.57-cadastro-gps.3.exe"
   }
 }
