@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0-rc.57-cadastro-gps.3",
+  "updateSequence": 5703,
+  "kind": "desktop-update",
+  "frontendCommit": "82b8587843a5b362bab7d821e0005b972754425c",
+  "validatedFrontendBase": "7989b8a2d2cc1e217225f60b4e9ccb0b4e7bc3fc",
+  "functionalValidationPending": false,
+  "functionalValidationDate": "2026-10-05",
+  "bridgeUpdateIncluded": true,
+  "bridgeVersion": "0.5.58",
+  "bridgeCommit": "6ba8a39cdb6c75240b530f9ef99cc8f635ed2a37",
+  "embeddedBridgeInstallerSha256": "8c4a068a5821c876e45fc213f50af7475be259e8a13f05395a61e2040a0d425f",
+  "databaseSchemaAfter": 12,
+  "backendDeploymentIncluded": false,
+  "backendUpdateRequired": false,
+  "acceptedInstalledVersions": [
+    "1.0.0-rc.31-candidato.2",
+    "1.0.0-rc.32-assistente.1",
+    "1.0.0-rc.32-assistente.2",
+    "1.0.0-rc.32-assistente.3",
+    "1.0.0-rc.33-layout.1",
+    "1.0.0-rc.34-pescadores.1",
+    "1.0.0-rc.35-login-manual.1",
+    "1.0.0-rc.36-perfis.1",
+    "1.0.0-rc.37-reemissao.1",
+    "1.0.0-rc.38",
+    "1.0.0-rc.39-perfis-usuario.1",
+    "1.0.0-rc.40-estabilidade.1",
+    "1.0.0-rc.41-emissao.1",
+    "1.0.0-rc.42-guias-existentes.1",
+    "1.0.0-rc.43-substituicao.1",
+    "1.0.0-rc.44-perfis-lote.1",
+    "1.0.0-rc.45-gps-lote.1",
+    "1.0.0-rc.46-gps-conclusao.1",
+    "1.0.0-rc.47-visual.1",
+    "1.0.0-rc.48-login.1",
+    "1.0.0-rc.49-abas.1",
+    "1.0.0-rc.50-cadastro.1",
+    "1.0.0-rc.51-financeiro.1",
+    "1.0.0-rc.52-duas-etapas.1",
+    "1.0.0-rc.53-boas-vindas.1",
+    "1.0.0-rc.54-painel.1",
+    "1.0.0-rc.55-plataforma.1",
+    "1.0.0-rc.56-acessos.1",
+    "1.0.0-rc.57-cadastro-gps.2",
+    "1.0.0-rc.57-cadastro-gps.3"
+  ],
+  "workflowRun": "37269695899",
+  "builtAtUtc": "2026-10-05T06:02:39.6504918Z",
+  "artifacts": [
+    {
+      "name": "SistemaPescador-Atualizacao-1.0.0-rc.57-cadastro-gps.3.exe",
+      "sha256": "d97068f6867d535cedcc74b63c4cc8c6ec5e07a56e9206a463bff8b1fdaf118e"
+    }
+  ],
+  "applicationFiles": [
+    {
+      "path": "connectivity_plus_plugin.dll",
+      "sha256": "be5f7ed26c080f7831d3b2df8d577337e294b34c403ffca8442f23ca1526f8c2"
+    },
+    {
+      "path": "dartjni.dll",
+      "sha256": "7b2a67981f78297c31a65e003bdfd3a694ba6cc2f2440debd32c02e4bfcb7191"
+    },
+    {
+      "path": "data/app.so",
+      "sha256": "9004675efc546037346f9811aafc283981cc9fecafec0cffb15366833e877c38"
+    },
+    {
+      "path": "data/flutter_assets/AssetManifest.bin",
+      "sha256": "6f4b578a93dc6a70c995a12139a77927ae074b0f39c6450ef27db04655a25fce"
+    },
+    {
+      "path": "data/flutter_assets/assets/brand/sistema_pescador_icon.png",
+      "sha256": "bfb7afbae3528f0e6437bb29792b9ccf14035f0e54c1a463cfacd05735bac1cc"
+    },
+    {
+      "path": "data/flutter_assets/assets/documentos/declaracao_residencia.docx",
+      "sha256": "a40a2ccd46d4feef00b09f70733a860fcf8dca19a69c0e05599d8df060522a33"
+    },
+    {
+      "path": "data/flutter_assets/assets/documentos/filiacao.docx",
+      "sha256": "c31d4e5937b70ca249a00cbc425480afc485df92808d793d859867af6482c2e6"
+    },
+    {
+      "path": "data/flutter_assets/FontManifest.json",
+      "sha256": "cd7e03645bc44b2dd47b7cb626f51c4ecbf55a197ab77241628b47ac165fbe21"
+    },
+    {
+      "path": "data/flutter_assets/fonts/MaterialIcons-Regular.otf",
+      "sha256": "d8a3f2faf346184e9b559766df8e62adf1d7b43bd0b194cc1ef3d6e153186673"
+    },
+    {
+      "path": "data/flutter_assets/NativeAssetsManifest.json",
+      "sha256": "4ac70f7d67abb2ffc105d2cabfdee68c9aa138d132107e5be4949c539f7ce379"
+    },
+    {
+      "path": "data/flutter_assets/NOTICES.Z",
+      "sha256": "0b0b75b2f1b2bbc26001729481bd1a9da2f2200a5fa6f386ff3b9ab86cdd3023"
+    },
+    {
+      "path": "data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+      "sha256": "67c44fe9183b002e79dde7f6977e2988661c9a3e4a3c5fce968787efdbed823c"
+    },
+    {
+      "path": "data/flutter_assets/shaders/ink_sparkle.frag",
+      "sha256": "1fe8436a743884cb65078fe8c7b38e18f5365f2a2961270916f426fd13c604af"
+    },
+    {
+      "path": "data/flutter_assets/shaders/stretch_effect.frag",
+      "sha256": "bc7599dbbbaab310efe41520574138d21fb18a88c8fe4495ed79315309336f6f"
+    },
+    {
+      "path": "data/icudtl.dat",
+      "sha256": "325a86063d26334c2eabe1743cea073b612540fbf3d8fc2ef0b5708e3763a8c7"
+    },
+    {
+      "path": "flutter_secure_storage_windows_plugin.dll",
+      "sha256": "a8aa3393ec1375007f18677db40d4e76463d749dcdf7c00c5565d76bd75470d8"
+    },
+    {
+      "path": "flutter_windows.dll",
+      "sha256": "4598eeff31a9b24947083d3722ccfe0ce62aced05c4bd2c717a4b4af492dac9b"
+    },
+    {
+      "path": "sistema_pescador_frontend.exe",
+      "sha256": "73218085f105453c76734ce82f82a899244de063340d2c50f6197a97630943ca"
+    },
+    {
+      "path": "sqlite3.dll",
+      "sha256": "858141a2826f53e8374cb07de2638e0f1ac944f49b897dd558feba5597e86d1c"
+    }
+  ]
+}
