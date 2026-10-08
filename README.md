@@ -1,22 +1,19 @@
 # Sistema Pescador — Downloads
 
-## Atualização estável: 1.0.0-rc.62-estavel.1
+## Versão estável: 1.0.0-rc.62-estavel.2
 
-[Baixar atualização para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.62-estavel.1/SistemaPescador-Atualizacao-1.0.0-rc.62-estavel.1.exe)
+[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.62-estavel.2/SistemaPescador-Setup-1.0.0-rc.62-estavel.2.exe)
 
-[Notas e integridade](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.62-estavel.1)
+Este mesmo instalador serve para **computadores novos e atualizações**. Não é necessário instalar RC30, RC31 ou qualquer versão intermediária. Inclui GuiaBridge 0.5.58, ScannerBridge 2.0.2 e o runtime Microsoft necessário.
 
-No aplicativo, use **Verificar atualizações**. Salve seu trabalho, aguarde as operações terminarem, feche o sistema e execute o instalador, sem desinstalar a versão atual.
+Para atualizar, salve seu trabalho, espere as operações terminarem, feche o sistema e execute o instalador **sem desinstalar a versão atual**. O aplicativo também oferece Verificar atualizações.
 
-- Filtros compactos em Pescadores: pesquisa por nome/CPF e cidade visíveis, com detalhes no botão Filtros e contador de filtros adicionais ativos.
-- Fechar todas as abas ao lado do botão +, com confirmação, Dashboard preservado e proteção de operações em andamento.
-- Dock inferior em Configurações → Menu → Local do menu; também mantém o menu lateral.
-- Agenda pessoal/compartilhada e foto 3x4 online consolidadas. GuiaBridge 0.5.58 preservado.
+Mantém filtros compactos, botão Fechar todas as abas, dock inferior, agenda pessoal/compartilhada e foto 3x4 online. Não requer atualização do backend RC60 já instalado. A rede corporativa será disponibilizada separadamente como candidata para teste integrado.
 
-Nenhuma atualização adicional de backend é necessária no servidor que já recebeu a RC60. Banco local, documentos e configurações são preservados. A rede corporativa de conexões e mensagens será desenvolvida na próxima etapa e não integra esta versão.
+Validação: 656 testes Flutter, análise Dart, compilação Windows e instalação em máquina descartável sem versões anteriores. Foram conferidas atualização desde RC30/RC31/RC57/RC61/RC62, reinstalação, reparo de componentes, preservação de arquivos sintéticos e interrupção quando o backup não pode ser realizado. O pacote publicado é o mesmo testado, sem recompilação.
 
-Validação automatizada: 656 testes Flutter aprovados, análise Dart, compilação Windows e teste de instalação/reinstalação sobre RC60/RC61 com dados sintéticos. Prévia visual conferida. O uso no notebook do usuário deve ser conferido após instalar.
+[Notas, manifesto e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0-rc.62-estavel.2)
 
-O instalador público é o mesmo pacote validado, transferido sem recompilação. SHA-256: `78b4d7ebe7c13399513e123aaf2b9e65ee9599c15974617497365e6c7ea664fe`.
+SHA-256 do instalador: `f98c58de86d81658b43331a3990f1d493f86506774c322e42e41060c4ef599ba`.
 
 [Histórico de versões](https://github.com/j4xmine/sistema-pescador-download/releases)
