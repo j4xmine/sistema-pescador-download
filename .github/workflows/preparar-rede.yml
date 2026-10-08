@@ -1,0 +1,27 @@
+name: Preparar backend RC63 validado
+on:
+  push:
+    branches: [release/rc63-candidato]
+    paths: [.github/workflows/preparar-rede.yml]
+permissions:
+  contents: write
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: v1.0.0-rc.63-rede.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir e preservar backend candidato
+        env:
+          SOURCE_URL: "https://release-assets.githubusercontent.com/github-production-release-asset/1269516953/741ec003-d0f8-4dfd-af07-411e3805f1fc?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-08T19%3A41%3A15Z&rscd=attachment%3B+filename%3Dsistema-pescador-backend-rede-corporativa.jar&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-08T18%3A40%3A59Z&ske=2026-10-08T19%3A41%3A15Z&sks=b&skv=2018-11-09&sig=q7dKd8%2FMXUoe45GqoobFfDo6S85uGy0RgEKKxonRqSA%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTQ4ODUyOSwibmJmIjoxNzkxNDg0OTI5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.hLXSd4nfGB-S0GldsWoOvRsFJI0mVLmcNahlYBKG4NI&response-content-disposition=attachment%3B%20filename%3Dsistema-pescador-backend-rede-corporativa.jar&response-content-type=application%2Foctet-stream"
+        run: |
+          set -Eeuo pipefail
+          echo "::add-mask::$SOURCE_URL"
+          cp -r release-rc63-backend dist
+          curl --silent --show-error --fail --location --retry 2 "$SOURCE_URL" -o dist/sistema-pescador-backend-rede-corporativa.jar
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+          mv dist/SHA256SUMS.txt dist/SHA256SUMS-backend.txt
+          gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --title 'RC63 — Rede corporativa candidata' --notes-file dist/REDE-CORPORATIVA-RC63.md

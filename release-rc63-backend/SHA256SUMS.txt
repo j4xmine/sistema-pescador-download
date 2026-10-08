@@ -1,0 +1,4 @@
+6abaeaec9d2af41abaa487cadcae7251d575362eed20b2f9c743910f92897dc3  REDE-CORPORATIVA-RC63.md
+5e803d4658aacec1f04420948b2722c7096c48abc0360dd5200be91b5531943d  backend-manifest.json
+82145d1ae20a6362fb0103dd235501b7dd07cbd7ac696b7bbab4c85e593eaf93  instalar-rede-corporativa.sh
+7d364f1331cc99374900766d1a7a8c8a19058d03bb6cc28e768a3e376e4aeb66  sistema-pescador-backend-rede-corporativa.jar

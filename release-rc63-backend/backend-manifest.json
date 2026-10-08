@@ -1,0 +1,10 @@
+{
+  "version": "RC63-rede-corporativa",
+  "commit": "2db84537610670215c6b5e58ea08ad52d93303f9",
+  "base": "0b2ba64074c56fdaf87bc2a04cef4ece3f5dd603",
+  "workflow": "37826100264",
+  "deployed": false,
+  "liveTwoUserValidationPending": true,
+  "photoOnlinePreserved": true,
+  "sha256": "7d364f1331cc99374900766d1a7a8c8a19058d03bb6cc28e768a3e376e4aeb66"
+}
