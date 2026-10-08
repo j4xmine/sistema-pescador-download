@@ -1,0 +1,4 @@
+f8f80431ff873f01401ef257215abf13c485c398de5bcbc6a04471f279f99773  guia-bridge-manifest.json
+bbeeb504d08a20d03b8aede41cc6b546364ffc51fadfc7b4030bfc6320ead78d  RC62-ESTAVEL.md
+78b4d7ebe7c13399513e123aaf2b9e65ee9599c15974617497365e6c7ea664fe  SistemaPescador-Atualizacao-1.0.0-rc.62-estavel.1.exe
+206314880bb23ac03bb0da27db999b99724dda266113498016057451fe6c8bc3  unified-manifest.json

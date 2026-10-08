@@ -1,0 +1,53 @@
+name: Publicar RC62 consolidada
+on:
+  push:
+    branches: [release/rc62-publicar]
+    paths: [.github/workflows/publicar-rc62.yml]
+permissions:
+  contents: write
+concurrency:
+  group: publicar-rc62
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TAG: v1.0.0-rc.62-estavel.1
+      INSTALLER: SistemaPescador-Atualizacao-1.0.0-rc.62-estavel.1.exe
+      INSTALLER_SHA256: 78b4d7ebe7c13399513e123aaf2b9e65ee9599c15974617497365e6c7ea664fe
+      EXPECTED_FRONTEND: 3c42025800a1d72e0961d0ac3315ebf71491dcb7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Transferir e conferir pacote exato
+        shell: bash
+        env:
+          SOURCE_URL: "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/82c26a68-2ced-4362-a4de-8f8610c8749f?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-08T05%3A28%3A05Z&rscd=attachment%3B+filename%3DSistemaPescador-Atualizacao-1.0.0-rc.62-estavel.1.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-08T04%3A27%3A28Z&ske=2026-10-08T05%3A28%3A05Z&sks=b&skv=2018-11-09&sig=SWiLKB7nUm%2FbHCbrpy0Mo20OYG2%2Flc2J8hydVnqKXkY%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTQzNjI4MywibmJmIjoxNzkxNDM0NDgzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.hWqY-ivVJC4-nv2wjiKmpI7EYCjzHlWPIn3Yjs_wdfg&response-content-disposition=attachment%3B%20filename%3DSistemaPescador-Atualizacao-1.0.0-rc.62-estavel.1.exe&response-content-type=application%2Foctet-stream"
+        run: |
+          set -Eeuo pipefail
+          echo "::add-mask::$SOURCE_URL"
+          mkdir dist
+          curl --silent --show-error --fail --location --retry 2 "$SOURCE_URL" -o "dist/$INSTALLER"
+          echo "$INSTALLER_SHA256  dist/$INSTALLER" | sha256sum -c -
+          cp release-rc62/* dist/
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+          jq -e '.frontendCommit == env.EXPECTED_FRONTEND and .version == "1.0.0-rc.62-estavel.1" and .bridgeVersion == "0.5.58"' dist/unified-manifest.json >/dev/null
+      - name: Publicar versao consolidada
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Release existente; nao sera sobrescrita.'
+            exit 1
+          fi
+          gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --title 'Sistema Pescador RC62 — Filtros compactos e abas' --notes-file dist/RC62-ESTAVEL.md
+          gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=false --latest=true
+      - name: Conferir download publico sem autenticacao
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          curl --silent --show-error --fail --location --retry 3 --retry-all-errors "https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$INSTALLER" -o publico.exe
+          echo "$INSTALLER_SHA256  publico.exe" | sha256sum -c -
+          echo PUBLIC_DOWNLOAD_VERIFIED=True
