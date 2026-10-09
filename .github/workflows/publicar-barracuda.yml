@@ -1,0 +1,90 @@
+name: Publicar v1.0.0 - Barracuda validada
+on:
+  push:
+    branches: [release/barracuda-1.0.0]
+permissions:
+  contents: read
+concurrency:
+  group: publicacao-barracuda-1.0.0
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TAG: v1.0.0
+      TRANSFER_BLOB: 9c4a486a674bea70c6cf27972ceda4d709100f0d
+      EXPECTED_FRONTEND: 25737c69d4d6c856d495efc5cd38e8835f1974a2
+      EXPECTED_INSTALLER: 375215a97cd73c2ac41b8ed9ef57d7ced4164aeb7cebfcfbbf7e9001acf37fa4
+      EXPECTED_MANIFEST: 9e9255cd92a1038629d050265dd54cec0433605b18f7c7922cd291f38116df1b
+    steps:
+      - name: Recuperar o pacote aprovado e conferir todos os arquivos
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$GH_REPO/git/blobs/$TRANSFER_BLOB" > transport.json
+          python3 - <<'PY'
+          import base64, hashlib, json, os, shutil, urllib.request
+          from pathlib import Path
+          from urllib.parse import urlparse
+          transport=json.loads(Path('transport.json').read_text())
+          assert transport['encoding']=='base64'
+          data=json.loads(base64.b64decode(transport['content']))
+          url=data['installerUrl']
+          parsed=urlparse(url)
+          assert parsed.scheme=='https' and parsed.hostname=='release-assets.githubusercontent.com'
+          print('::add-mask::'+url)
+          names={'unified-manifest.json','BARRACUDA.md','BARRACUDA-REVISAO.md','desktop-update-barracuda.json','SHA256SUMS.txt'}
+          assert set(data['files'])==names
+          for name in names:
+              Path(name).write_bytes(base64.b64decode(data['files'][name],validate=True))
+          manifest_bytes=Path('unified-manifest.json').read_bytes()
+          assert hashlib.sha256(manifest_bytes).hexdigest()==os.environ['EXPECTED_MANIFEST']
+          manifest=json.loads(manifest_bytes.decode('utf-8-sig'))
+          assert manifest['version']=='1.0.0' and manifest['releaseName']=='Barracuda'
+          assert manifest['updateSequence']==6400 and manifest['frontendCommit']==os.environ['EXPECTED_FRONTEND']
+          assert manifest['backendUpdateRequired'] is False and manifest['requiredBackendVersion']=='1.0.0-rc.63-rede.2'
+          assert manifest['bridgeVersion']=='0.5.58' and manifest['scannerVersion']=='2.0.2' and manifest['databaseSchemaAfter']==12
+          installer='SistemaPescador-Setup-1.0.0.exe'
+          alias='SistemaPescador-Atualizacao-1.0.0.exe'
+          expected=os.environ['EXPECTED_INSTALLER']
+          assert sorted(manifest['artifacts'],key=lambda a:a['name'])==[{'name':alias,'sha256':expected},{'name':installer,'sha256':expected}]
+          with urllib.request.urlopen(url,timeout=90) as source,Path(installer).open('wb') as dest:
+              while block:=source.read(1024*1024):
+                  dest.write(block)
+                  assert dest.tell()<=200*1024*1024
+          assert hashlib.sha256(Path(installer).read_bytes()).hexdigest()==expected
+          shutil.copyfile(installer,alias)
+          allowed=names-{'SHA256SUMS.txt'}|{installer,alias}
+          seen=set()
+          for line in Path('SHA256SUMS.txt').read_text(encoding='utf-8-sig').splitlines():
+              digest,name=line.split('  ',1)
+              assert name in allowed and name not in seen
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest
+              seen.add(name)
+          assert seen==allowed
+          feed=json.loads(Path('desktop-update-barracuda.json').read_text())
+          release=feed['release']
+          assert feed['schemaVersion']==1 and release['approved'] is True and release['backendReady'] is True
+          assert release['version']=='1.0.0' and release['sequence']==6400
+          assert release['downloadUrl']=='https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0/'+alias
+          assert {'1.0.0-rc.62-estavel.2','1.0.0-rc.63-rede.4'}<=set(release['acceptedInstalledVersions'])
+          print('PUBLIC_INSTALLER_MATCHES_VALIDATED_BUILD=True')
+          print('LEGACY_UPDATE_FILENAME_COMPATIBLE=True')
+          Path('transport.json').unlink()
+          PY
+      - name: Publicar Barracuda estavel
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          if gh release view "$TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
+            echo 'A versao ja existe; nenhuma substituicao automatica foi feita.'
+            exit 1
+          fi
+          gh release create "$TAG" --repo "$GH_REPO" --target "$GITHUB_SHA" --draft --title "v1.0.0 — Barracuda" --notes-file BARRACUDA.md SistemaPescador-Setup-1.0.0.exe SistemaPescador-Atualizacao-1.0.0.exe unified-manifest.json SHA256SUMS.txt BARRACUDA.md BARRACUDA-REVISAO.md desktop-update-barracuda.json
+          gh release edit "$TAG" --repo "$GH_REPO" --draft=false --prerelease=false --latest=true
+          gh release view "$TAG" --repo "$GH_REPO" --json url,isDraft,isPrerelease
