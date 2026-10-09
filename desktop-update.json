@@ -5,8 +5,8 @@
     "backendReady": true,
     "kind": "desktop-update",
     "platform": "windows-x64",
-    "version": "1.0.0-rc.62-estavel.2",
-    "sequence": 6202,
+    "version": "1.0.0",
+    "sequence": 6400,
     "acceptedInstalledVersions": [
       "1.0.0-rc.30",
       "1.0.0-rc.31-candidato.2",
@@ -43,9 +43,15 @@
       "1.0.0-rc.59-agenda.1",
       "1.0.0-rc.60-agenda-entidade.1",
       "1.0.0-rc.61-dock.1",
-      "1.0.0-rc.62-estavel.1"
+      "1.0.0-rc.62-estavel.1",
+      "1.0.0-rc.62-estavel.2",
+      "1.0.0-rc.63-rede.1",
+      "1.0.0-rc.63-rede.2",
+      "1.0.0-rc.63-rede.3",
+      "1.0.0-rc.63-rede.4"
     ],
-    "notes": "Instalador completo: instala em computador novo sem exigir RC30/RC31 e atualiza instalações existentes. Inclui aplicativo, GuiaBridge 0.5.58, ScannerBridge 2.0.2 e runtime Microsoft. Mantém filtros compactos, abas, dock, agenda compartilhada e foto online. Não exige novo backend. Salve o trabalho, encerre operações e feche o sistema antes de instalar.",
-    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0-rc.62-estavel.2/SistemaPescador-Setup-1.0.0-rc.62-estavel.2.exe"
+    "notes": "v1.0.0 — Barracuda. Rede corporativa com fotos, @username e chat renovado, agenda sem sobreposição, saída da conta protegendo a sincronização e instalador completo. Atualiza versões compatíveis e instala em computador novo. Salve o trabalho, conclua emissões e feche o sistema antes de instalar. Requer backend RC63.2, já aplicado no EC2.",
+    "downloadUrl": "https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0/SistemaPescador-Atualizacao-1.0.0.exe",
+    "releaseName": "Barracuda"
   }
 }
