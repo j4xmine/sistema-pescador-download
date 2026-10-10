@@ -1,23 +1,44 @@
 # Sistema Pescador — Downloads
 
-## Versão estável: v1.0.0 — Barracuda
+## Versão estável: v1.1.0 — Marlin
 
-[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.0.0/SistemaPescador-Setup-1.0.0.exe)
+[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.1.0/SistemaPescador-Setup-1.1.0.exe)
 
-O mesmo pacote serve para **computadores novos e atualizações**. Não é necessário instalar uma versão intermediária. Inclui GuiaBridge 0.5.58, ScannerBridge 2.0.2 e o runtime Microsoft necessário.
+O mesmo pacote serve para **computadores novos e atualizações**. Não é necessário
+instalar versões intermediárias. Inclui GuiaBridge 0.5.58, ScannerBridge 2.0.2 e
+runtime Microsoft. Setup e Atualizacao têm conteúdo idêntico.
 
-Para atualizar, salve seu trabalho, espere as operações terminarem, feche o sistema e execute o instalador **sem desinstalar a versão atual**. O aplicativo também oferece **Verificar atualizações**. Os arquivos Setup e Atualizacao são idênticos; o segundo nome mantém a compatibilidade com os atualizadores existentes.
+Salve o trabalho, conclua sincronizações e emissões, feche o programa e execute o
+instalador **sem desinstalar a versão atual**. Você também pode usar **Verificar
+atualizações** no aplicativo. Atualiza Barracuda, Advocacia rc.1/rc.2 e as bases
+anteriores compatíveis listadas no catálogo.
 
-A Barracuda reúne cadastro, documentos, financeiro, atendimento, produção e GPS, agenda compartilhada, múltiplas abas, perfis e rede corporativa. Traz chat renovado, fotos de perfil e @username; agenda e conversa alternam sem sobreposição. A revisão também corrigiu a saída durante sincronização, notificações ao trocar de sessão, retorno ao login dentro de abas e proteção de dados exportados em CSV.
+Marlin traz um painel renovado para **escritórios de advocacia e advogados
+autônomos**, cadastro profissional, equipe, inscrições OAB e consulta pública
+assistida ao CNA. O aplicativo abre o portal no Edge/Chrome, o operador pesquisa
+e seleciona a ficha e confirma a importação. A foto da OAB é opcional.
 
-Requer o backend RC63.2 já instalado no EC2. Esta atualização desktop não exige nova instalação do backend nem altera suas configurações de duas etapas. Mantém o esquema local 12.
+As áreas **Atendimento online com cliente**, **Casos e processos**, **Prazos e
+audiências**, **Documentos e assinaturas** e **Honorários e contratos** aparecem
+somente na advocacia e estão marcadas **Em desenvolvimento**. São propostas,
+sem envio de mensagens ou documentos, criação de casos ou acesso do cliente
+nesta versão. As funções existentes das colônias, agenda, financeiro, documentos,
+GPS e rede corporativa continuam disponíveis.
 
-Validação: 707 testes Flutter na suíte completa, 310 testes do backend existente, análise Dart sem erros, regressões Windows, compilação Windows e instalação em máquina descartável. Foram conferidas instalação nova, atualização desde as bases RC30/RC31/RC57/RC61/RC62/RC63, reinstalação, reparo de componentes, preservação de arquivos sintéticos e interrupção quando o backup não pode ser realizado. O pacote publicado é o mesmo testado, sem recompilação.
+Requer o backend **1.1.0-rc.1-advocacia**, já instalado e confirmado no EC2.
+Não exige nova migração de banco. Mantém esquema local 12.
 
-Os testes usam dados sintéticos e não substituem a conferência de emissões reais no eSocial/GOV.BR nem de scanner físico. Consulte o relatório da revisão para conhecer a cobertura e seus limites.
+Validação: 749 testes na suíte completa, testes Windows, navegador real
+com respostas CNA sintéticas, compilação e testes de instalação nova, atualização,
+reparo e preservação de arquivos de teste. O pacote publicado é o mesmo validado,
+sem recompilação. O uso real do CNA/reCAPTCHA depende do portal e da máquina do
+operador; a conferência de eSocial/GOV.BR e scanner físico não é substituída por
+estes testes.
 
-[Notas, relatório da revisão, manifesto e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0)
+[Notas, revisão, manifesto e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.0)
 
-SHA-256 do instalador: `375215a97cd73c2ac41b8ed9ef57d7ced4164aeb7cebfcfbbf7e9001acf37fa4`.
+SHA-256 do instalador: `7590628266474a83e2c354194c453d99ba6aa241d245873b923fdfe0feb13eaa`.
+
+[Barracuda — versão anterior](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0)
 
 [Histórico de versões](https://github.com/j4xmine/sistema-pescador-download/releases)
