@@ -1,0 +1,99 @@
+name: Publicar Marlin 1.1.1 verificada
+on:
+  push:
+    branches: [release/marlin-1.1.1]
+permissions:
+  contents: write
+concurrency:
+  group: publicacao-marlin-1.1.1
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TRANSPORT_BLOB: ecd9c6e4528c215f138131116f105ef0c6f99d12
+      SOURCE_COMMIT: da71b6240440f3f7b76f4be715b552331db6d87a
+      EXPECTED_ASSETS: '{"desktop-update-marlin-next.json":{"digest":"sha256:bd1294d9e6d4d40cd1cdf2909c228621fb7ddf0e6135b7ca1ae9b819df518941","size":2038},"MARLIN-NEXT.md":{"digest":"sha256:880926adf5aab291a564b5aed3e029ca1038e4c07f0c23a69f75aa61eac83fad","size":1728},"SHA256SUMS.txt":{"digest":"sha256:50f593336b6b6dad1efd9cbf602746f4a54d7b79d425b119e90b4f2596ca9e04","size":474},"SistemaPescador-Atualizacao-1.1.1.exe":{"digest":"sha256:fd25cc90a781216ddfaf8ab379cb225ed1291714d636eed9de9d562f6576cbc2","size":106098643},"SistemaPescador-Setup-1.1.1.exe":{"digest":"sha256:fd25cc90a781216ddfaf8ab379cb225ed1291714d636eed9de9d562f6576cbc2","size":106098643},"unified-manifest.json":{"digest":"sha256:2efab28b0138e84c4d6c3eecf38892dc6b39b22bb980d149c10ffe1fde39a052","size":54570}}'
+    steps:
+      - name: Recuperar os mesmos binários aprovados
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$GH_REPO/git/blobs/$TRANSPORT_BLOB" > transport.json
+          python3 - <<'PY'
+          import base64,hashlib,json,os,shutil,urllib.request
+          from pathlib import Path
+          from urllib.parse import urlparse
+          expected=json.loads(os.environ['EXPECTED_ASSETS'])
+          envelope=json.loads(Path('transport.json').read_text())
+          assert envelope['encoding']=='base64'
+          data=json.loads(base64.b64decode(envelope['content']))
+          names={'unified-manifest.json','MARLIN-NEXT.md','desktop-update-marlin-next.json','SHA256SUMS.txt'}
+          setup='SistemaPescador-Setup-1.1.1.exe'
+          alias='SistemaPescador-Atualizacao-1.1.1.exe'
+          assert set(data['files'])==names and set(expected)==names|{setup,alias}
+          root=Path('dist');root.mkdir()
+          for name in names:
+              raw=base64.b64decode(data['files'][name],validate=True)
+              assert len(raw)<2*1024*1024
+              (root/name).write_bytes(raw)
+          url=data['installerUrl'];p=urlparse(url)
+          assert p.scheme=='https' and p.hostname=='release-assets.githubusercontent.com'
+          print('::add-mask::'+url)
+          with urllib.request.urlopen(url,timeout=90) as src,(root/setup).open('wb') as dest:
+              while block:=src.read(1024*1024):
+                  dest.write(block)
+                  assert dest.tell()<250*1024*1024
+          shutil.copyfile(root/setup,root/alias)
+          def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+          for name,item in expected.items():
+              assert item['size']==(root/name).stat().st_size
+              assert item['digest']=='sha256:'+sha(root/name)
+          seen=set()
+          for line in (root/'SHA256SUMS.txt').read_text(encoding='utf-8-sig').splitlines():
+              digest,name=line.split('  ',1)
+              assert name in names|{setup,alias} and name not in seen
+              assert sha(root/name)==digest
+              seen.add(name)
+          assert seen==(names-{'SHA256SUMS.txt'})|{setup,alias}
+          m=json.loads((root/'unified-manifest.json').read_text(encoding='utf-8-sig'))
+          assert m['frontendCommit']==os.environ['SOURCE_COMMIT'] and m['version']=='1.1.1'
+          assert m['updateSequence']==6800 and m['releaseName']=='Marlin'
+          assert m['backendUpdateRequired'] is False and m['requiredBackendVersion']=='1.1.0-rc.1-advocacia'
+          assert m['bridgeVersion']=='0.5.58' and m['scannerVersion']=='2.0.2' and m['databaseSchemaAfter']==12
+          assert {a['name'] for a in m['artifacts']}=={setup,alias}
+          for a in m['artifacts']:assert a['sha256']==sha(root/a['name'])
+          c=json.loads((root/'desktop-update-marlin-next.json').read_text())['release']
+          assert c['version']=='1.1.1' and c['sequence']==6800
+          assert c['approved'] is True and c['backendReady'] is True
+          assert c['downloadUrl']=='https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.1.1/'+alias
+          assert {'1.1.0','1.1.1-rc.1'}.issubset(c['acceptedInstalledVersions'])
+          print('BINARIOS_E_MANIFESTOS_CONFERIDOS=True')
+          PY
+      - name: Publicar e conferir os seis anexos
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$GH_REPO/releases?per_page=100" --paginate --slurp > before.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          assert not any(r['tag_name']=='v1.1.1' for p in json.loads(Path('before.json').read_text()) for r in p), 'Tag existente; não sobrescrever'
+          PY
+          gh release create v1.1.1 --repo "$GH_REPO" --target "$GITHUB_SHA" --draft --title 'v1.1.1 — Marlin' --notes-file dist/MARLIN-NEXT.md dist/*
+          gh api "repos/$GH_REPO/releases?per_page=100" --paginate --slurp > uploaded.json
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          rows=[r for p in json.loads(Path('uploaded.json').read_text()) for r in p if r['tag_name']=='v1.1.1']
+          assert len(rows)==1 and rows[0]['draft'] is True
+          r=rows[0];e=json.loads(os.environ['EXPECTED_ASSETS'])
+          assert len(r['assets'])==len(e) and {a['name'] for a in r['assets']}==set(e)
+          for a in r['assets']:
+              assert a['size']==e[a['name']]['size'] and a['digest']==e[a['name']]['digest']
+          Path('release-id.txt').write_text(str(r['id']))
+          print('ANEXOS_PUBLICOS_CONFERIDOS=True')
+          PY
+          release_id=$(cat release-id.txt)
+          gh api "repos/$GH_REPO/releases/$release_id" --method PATCH -F draft=false -F prerelease=false -f make_latest=true --jq '{tag_name,draft,prerelease,html_url}'
