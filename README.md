@@ -1,50 +1,35 @@
 # Sistema Pescador — Downloads
 
-## Versão estável: v1.1.1 — Marlin
+## Versão estável: v1.1.2 — Marlin
 
-[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.1.1/SistemaPescador-Setup-1.1.1.exe)
+[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.1.2/SistemaPescador-Setup-1.1.2.exe)
 
-O mesmo pacote serve para **computadores novos e atualizações**. Não é necessário
-instalar versões intermediárias. Inclui GuiaBridge 0.5.58, ScannerBridge 2.0.2 e
-runtime Microsoft. Setup e Atualizacao têm conteúdo idêntico.
+O mesmo pacote serve para **computadores novos e atualizações**. Não é necessário instalar versões intermediárias. Inclui GuiaBridge 0.5.58, ScannerBridge 2.0.2 e runtime Microsoft. Setup e Atualizacao têm conteúdo idêntico.
 
-Salve o trabalho, conclua sincronizações e emissões, feche o programa e execute o
-instalador **sem desinstalar a versão atual**. Você também pode usar **Verificar
-atualizações** no aplicativo. Atualiza Marlin 1.1.0/1.1.1-rc.1, Barracuda, Advocacia rc.1/rc.2 e as bases
-anteriores compatíveis listadas no catálogo.
+Conclua sincronizações e emissões, salve o trabalho, feche o programa e execute o instalador **sem desinstalar a versão atual**. Também é possível usar **Verificar atualizações** no aplicativo ou baixar pela [área de usuários](https://sistemapescador.com.br/area).
 
-A 1.1.1 melhora o visual dos cadastros e as máscaras de CPF, CNPJ, CEP e telefone;
-permite reorganizar o dock por conta e entidade; e avisa sobre novas atualizações
-com opção de adiar. O aviso não instala nem fecha o aplicativo automaticamente.
+## Novidades da 1.1.2
 
-Marlin traz um painel renovado para **escritórios de advocacia e advogados
-autônomos**, cadastro profissional, equipe, inscrições OAB e consulta pública
-assistida ao CNA. O aplicativo abre o portal no Edge/Chrome, o operador pesquisa
-e seleciona a ficha e confirma a importação. A foto da OAB é opcional.
+- Resumo de manutenção por pescador e ano, com Excel e JSON.
+- Totais da produção histórica vinculada à guia atual; preços e percentuais por espécie.
+- Perfis compartilhados por entidade, com permissões e histórico de alterações.
+- Último perfil escolhido aplicado automaticamente nos próximos pescadores, sempre com os totais individuais.
+- Seletor rápido com busca e opção de recuperar a configuração individual salva.
 
-As áreas **Atendimento online com cliente**, **Casos e processos**, **Prazos e
-audiências**, **Documentos e assinaturas** e **Honorários e contratos** aparecem
-somente na advocacia e estão marcadas **Em desenvolvimento**. São propostas,
-sem envio de mensagens ou documentos, criação de casos ou acesso do cliente
-nesta versão. As funções existentes das colônias, agenda, financeiro, documentos,
-GPS e rede corporativa continuam disponíveis.
+A escolha do último perfil é lembrada por conta e entidade neste computador. Os modelos são compartilhados com a equipe; cada operador mantém sua escolha independente. A aplicação automática não sobrescreve configurações salvas: use **Salvar configuração** para guardar o novo resumo. Não há envio automático ao PesqBrasil nesta versão.
 
-Requer o backend **1.1.0-rc.1-advocacia**, já instalado e confirmado no EC2.
-Não exige nova migração de banco. Mantém esquema local 12.
+Permanecem disponíveis os cadastros com máscaras, dock reorganizável, avisos de atualização, agenda, financeiro, documentos, Central GPS e rede corporativa. O painel de advocacia e a consulta assistida ao CNA são preservados; as áreas jurídicas sinalizadas **Em desenvolvimento** continuam propostas sem operações ativas.
 
-Validação: 760 testes na suíte completa, testes Windows, navegador real
-com respostas CNA sintéticas, compilação e testes de instalação nova, atualização,
-reparo e preservação de arquivos de teste. O pacote publicado é o mesmo validado,
-sem recompilação. O uso real do CNA/reCAPTCHA depende do portal e da máquina do
-operador; a conferência de eSocial/GOV.BR e scanner físico não é substituída por
-estes testes.
+## Compatibilidade e verificação
 
-[Notas, revisão, manifesto e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.1)
+Requer backend **1.1.2-rc.3-manutencao**, já instalado e confirmado no EC2. Quem já aplicou esse pacote não precisa atualizar o servidor novamente. Mantém o esquema local 12 e não exige migração destrutiva do banco.
 
-SHA-256 do instalador: `fd25cc90a781216ddfaf8ab379cb225ed1291714d636eed9de9d562f6576cbc2`.
+Instalador verificado em máquina descartável: instalação limpa, atualização da rc.3 e bases anteriores compatíveis, preservação de dados e reparo de componentes. Os pacotes publicados são os mesmos verificados pelos testes, sem recompilação durante a publicação.
 
-[Marlin 1.1.0 — versão anterior](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.0)
+[Notas, manifestos e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.2)
 
-[Barracuda — histórico](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.0.0)
+SHA-256 do instalador: `05c3a9d1892cea70d22793936c13dc57751d2973203cb9639d676386d0b50464`.
+
+[Marlin 1.1.1 — versão anterior](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.1)
 
 [Histórico de versões](https://github.com/j4xmine/sistema-pescador-download/releases)
