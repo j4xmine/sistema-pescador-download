@@ -30,10 +30,19 @@ assert setup==hashlib.sha256((out/'SistemaPescador-Atualizacao-1.1.2-rc.3.exe').
 repo=os.environ['GITHUB_REPOSITORY'];tag=manifest['tag']
 assert repo=='j4xmine/sistema-pescador-download'
 # Draft somente passa a ser visível após upload e conferência de todos os assets.
-subprocess.run(['gh','release','create',tag,'--repo',repo,'--target',os.environ['GITHUB_SHA'],'--draft','--prerelease','--latest=false','--title','Marlin 1.1.2-rc.3 — perfis da entidade','--notes-file','NOTAS-MANUTENCAO.md',*[str(out/a) for a in sorted(expected)]],check=True)
-r=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/releases/tags/{tag}']))
+releases=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/releases?per_page=100']))
+existing=[r for r in releases if r['tag_name']==tag]
+assert len(existing)<=1
+if not existing:
+    subprocess.run(['gh','release','create',tag,'--repo',repo,'--target',os.environ['GITHUB_SHA'],'--draft','--prerelease','--latest=false','--title','Marlin 1.1.2-rc.3 — perfis da entidade','--notes-file','NOTAS-MANUTENCAO.md',*[str(out/a) for a in sorted(expected)]],check=True)
+    releases=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/releases?per_page=100']))
+    existing=[r for r in releases if r['tag_name']==tag]
+assert len(existing)==1
+r=existing[0]
+assert r['prerelease']
 assert {a['name'] for a in r['assets']}==expected
 for a in r['assets']:
     source=next(v for v in assets if v['name']==a['name']);assert a['digest']=='sha256:'+source['sha256'] and a['size']==source['size']
-subprocess.run(['gh','release','edit',tag,'--repo',repo,'--draft=false','--prerelease','--latest=false'],check=True)
+if r['draft']:
+    subprocess.run(['gh','api',f"repos/{repo}/releases/{r['id']}",'--method','PATCH','--input','-'],input=json.dumps({'draft':False,'prerelease':True,'make_latest':'false'}).encode(),stdout=subprocess.DEVNULL,check=True)
 print('RELEASE_PUBLICADA='+r['html_url'])
