@@ -1,0 +1,37 @@
+{
+  "source": "j4xmine/sistema-pescador-frontend",
+  "tag": "v1.1.3-rc.6",
+  "assets": [
+    {
+      "name": "PESQBRASIL-AUTOMACAO.md",
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/5b765117-5915-4f10-902d-efd9a45b427a?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-12T21%3A11%3A55Z&rscd=attachment%3B+filename%3DPESQBRASIL-AUTOMACAO.md&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-12T20%3A11%3A53Z&ske=2026-10-12T21%3A11%3A55Z&sks=b&skv=2018-11-09&sig=OXgxAwm9TBNd6VpY1b%2FO2ftMdOq%2F7%2F3fz07jVgdc5iU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTgzNzcyMywibmJmIjoxNzkxODM3NDIzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.siBD1du_5jJsGFQkFoSda0GuFDLtKVra6nNJ4y3eV8A&response-content-disposition=attachment%3B%20filename%3DPESQBRASIL-AUTOMACAO.md&response-content-type=application%2Foctet-stream",
+      "sha256": "924e3ce1d5fcf66f2a9851bbc66696619f0d9f9cbf508d709caacfdc5a1fdda2",
+      "size": 4737
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/f4de6fee-7559-457e-9842-bc24582d9ea6?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-12T21%3A11%3A13Z&rscd=attachment%3B+filename%3DSHA256SUMS.txt&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-12T20%3A11%3A02Z&ske=2026-10-12T21%3A11%3A13Z&sks=b&skv=2018-11-09&sig=HEAf%2Bba60Z0tRhNT9uVDGN5wLefEjzHAp3npR%2F9llJM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTgzNzcyMywibmJmIjoxNzkxODM3NDIzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.siBD1du_5jJsGFQkFoSda0GuFDLtKVra6nNJ4y3eV8A&response-content-disposition=attachment%3B%20filename%3DSHA256SUMS.txt&response-content-type=application%2Foctet-stream",
+      "sha256": "fd73670f97f9c04279d14639160874a0abae49269adb464dd4decb973f5f9b94",
+      "size": 394
+    },
+    {
+      "name": "SistemaPescador-Atualizacao-1.1.3-rc.6.exe",
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/82ea17cc-f137-4d5d-ab98-29c2e8021b7f?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-12T21%3A33%3A52Z&rscd=attachment%3B+filename%3DSistemaPescador-Atualizacao-1.1.3-rc.6.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-12T20%3A33%3A36Z&ske=2026-10-12T21%3A33%3A52Z&sks=b&skv=2018-11-09&sig=5n%2F2xvZPSnHP%2FxcjrIFvNxXuwfnvSQWrsm0paeCzZrs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTg0MTAyMywibmJmIjoxNzkxODM3NDIzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Kke_33uzm0oSS06VYjhSRHq_PHjEfYZ1YO-7zU_DvqQ&response-content-disposition=attachment%3B%20filename%3DSistemaPescador-Atualizacao-1.1.3-rc.6.exe&response-content-type=application%2Foctet-stream",
+      "sha256": "07ad8051e6f11abeb9b72d554c1a5b9bf6113e99f287a8a994f5d3e3b0ad7a61",
+      "size": 156275494
+    },
+    {
+      "name": "SistemaPescador-Setup-1.1.3-rc.6.exe",
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/77f5d443-497b-4c94-878a-9fbd9e3919cf?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-12T21%3A17%3A54Z&rscd=attachment%3B+filename%3DSistemaPescador-Setup-1.1.3-rc.6.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-12T20%3A17%3A16Z&ske=2026-10-12T21%3A17%3A54Z&sks=b&skv=2018-11-09&sig=jK7TPQGkfxYAIEHyAhc8gPC5XaTv446%2FDsIrvC6dlOk%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTg0MTAyNCwibmJmIjoxNzkxODM3NDI0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Pw__yLu96wo2maS42aBA2dw6xLK1UzZaH6GAomIuHx4&response-content-disposition=attachment%3B%20filename%3DSistemaPescador-Setup-1.1.3-rc.6.exe&response-content-type=application%2Foctet-stream",
+      "sha256": "07ad8051e6f11abeb9b72d554c1a5b9bf6113e99f287a8a994f5d3e3b0ad7a61",
+      "size": 156275494
+    },
+    {
+      "name": "unified-manifest.json",
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1295982440/8e0e6e37-b8c4-4ea6-82d3-d632d26dcfb9?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-12T21%3A25%3A39Z&rscd=attachment%3B+filename%3Dunified-manifest.json&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-12T20%3A25%3A10Z&ske=2026-10-12T21%3A25%3A39Z&sks=b&skv=2018-11-09&sig=HZNon2b3FhaefKL2sfApClyGKIUqsW0%2FLXLoFI8LHxw%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTgzNzcyNCwibmJmIjoxNzkxODM3NDI0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.jwGo0LVdiNiafzjd2oRq_JP968vZyBnp9oyMzutx9f8&response-content-disposition=attachment%3B%20filename%3Dunified-manifest.json&response-content-type=application%2Foctet-stream",
+      "sha256": "76742ab9c4ec040942c12a04d9c356484a9d1ef9d1a7f42870dad05ee9a7ef56",
+      "size": 107876
+    }
+  ],
+  "frontendCommit": "f8b18501a184bc07a082790e3e9a79d91f4b9cd7"
+}
