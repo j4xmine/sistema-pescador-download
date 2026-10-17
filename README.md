@@ -1,35 +1,35 @@
 # Sistema Pescador — Downloads
 
-## Versão estável: v1.1.2 — Marlin
+## Versão estável: v1.1.3 — Marlin
 
-[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.1.2/SistemaPescador-Setup-1.1.2.exe)
+[Baixar instalador completo para Windows](https://github.com/j4xmine/sistema-pescador-download/releases/download/v1.1.3/SistemaPescador-Setup-1.1.3.exe)
 
-O mesmo pacote serve para **computadores novos e atualizações**. Não é necessário instalar versões intermediárias. Inclui GuiaBridge 0.5.58, ScannerBridge 2.0.2 e runtime Microsoft. Setup e Atualizacao têm conteúdo idêntico.
+O mesmo pacote atende computadores novos e atualizações. Inclui GuiaBridge 0.5.60, ScannerBridge 2.0.2 e runtime Microsoft. Setup e Atualizacao têm conteúdo idêntico.
 
-Conclua sincronizações e emissões, salve o trabalho, feche o programa e execute o instalador **sem desinstalar a versão atual**. Também é possível usar **Verificar atualizações** no aplicativo ou baixar pela [área de usuários](https://sistemapescador.com.br/area).
+Conclua sincronizações e emissões, salve o trabalho, feche o aplicativo e execute o instalador **sem desinstalar a versão atual**. Também é possível usar **Verificar atualizações** no aplicativo ou baixar pela [área de usuários](https://sistemapescador.com.br/area).
 
-## Novidades da 1.1.2
+## Novidades da 1.1.3
 
-- Resumo de manutenção por pescador e ano, com Excel e JSON.
-- Totais da produção histórica vinculada à guia atual; preços e percentuais por espécie.
-- Perfis compartilhados por entidade, com permissões e histórico de alterações.
-- Último perfil escolhido aplicado automaticamente nos próximos pescadores, sempre com os totais individuais.
-- Seletor rápido com busca e opção de recuperar a configuração individual salva.
+- Agenda e mensagens em painéis laterais, acessíveis pelo cabeçalho.
+- Área principal ampliada, navegação revisada e dock que expande ao passar o mouse.
+- Visual atualizado de Usuários e Acessos e da Rede Corporativa.
+- Opção de limpar a conversa para a própria conta.
+- Central de Suporte com botão de voltar, chamados, imagens, categorias, prioridades, responsáveis e notas privadas.
+- Atendimento por suporte autorizado e administração da plataforma.
+- Modo Informativo na área de usuários do site.
 
-A escolha do último perfil é lembrada por conta e entidade neste computador. Os modelos são compartilhados com a equipe; cada operador mantém sua escolha independente. A aplicação automática não sobrescreve configurações salvas: use **Salvar configuração** para guardar o novo resumo. Não há envio automático ao PesqBrasil nesta versão.
-
-Permanecem disponíveis os cadastros com máscaras, dock reorganizável, avisos de atualização, agenda, financeiro, documentos, Central GPS e rede corporativa. O painel de advocacia e a consulta assistida ao CNA são preservados; as áreas jurídicas sinalizadas **Em desenvolvimento** continuam propostas sem operações ativas.
+A inteligência artificial permanece desativada. As funções anteriores de cadastro, financeiro, documentos, manutenção, perfis, GPS e PesqBrasil continuam disponíveis conforme as permissões de cada conta.
 
 ## Compatibilidade e verificação
 
-Requer backend **1.1.2-rc.3-manutencao**, já instalado e confirmado no EC2. Quem já aplicou esse pacote não precisa atualizar o servidor novamente. Mantém o esquema local 12 e não exige migração destrutiva do banco.
+Requer o backend de suporte `1.1.3-rc.27-suporte`, revisão `97013c2cf223ec28a4d8e2d835169cba4e9a44eb`, já instalado e confirmado no EC2. Quem já aplicou esse pacote não precisa instalar novamente o servidor. O esquema local permanece 12.
 
-Instalador verificado em máquina descartável: instalação limpa, atualização da rc.3 e bases anteriores compatíveis, preservação de dados e reparo de componentes. Os pacotes publicados são os mesmos verificados pelos testes, sem recompilação durante a publicação.
+Foram verificados os testes do aplicativo, os contratos de mensagens e suporte com backend e banco reais em ambiente isolado e o instalador em Windows descartável: instalação nova, atualização de 1.1.2 e rc.28, preservação de dados sintéticos, backup, reinstalação e reparo de componentes. Os arquivos publicados são os mesmos verificados, sem recompilação durante a publicação.
 
-[Notas, manifestos e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.2)
+Esses testes não abrangem todos os modelos físicos de scanner nem todas as configurações dos computadores dos clientes.
 
-SHA-256 do instalador: `05c3a9d1892cea70d22793936c13dc57751d2973203cb9639d676386d0b50464`.
+[Notas, manifestos e hashes](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.3)
 
-[Marlin 1.1.1 — versão anterior](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.1)
+[Marlin 1.1.2 — versão anterior](https://github.com/j4xmine/sistema-pescador-download/releases/tag/v1.1.2)
 
 [Histórico de versões](https://github.com/j4xmine/sistema-pescador-download/releases)
